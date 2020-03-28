@@ -1,0 +1,44 @@
+name: "TeleportAlias"
+version: "0.1"
+main: "io.github.maxnz.teleportalias.TeleportAlias"
+api-version: "1.15"
+
+commands:
+  addalias:
+    description: Add a new alias
+    usage: /addalias alias x y z
+    permission: teleportalias.addalias
+    permission-message: You don't have permission to add a new alias
+  editalias:
+    description: Edit an alias
+    usage: /editalias alias x y z
+    permission: teleportalias.editalias
+    permission-message: You don't have permission to edit an alias
+  listalias:
+    description: List all aliases
+    usage: /listalias
+  removealias:
+    description: Remove an alias
+    usage: /removealias alias [alias...]
+    permission: teleportalias.removealias
+    permission-message: You don't have permission to remove an alias
+  teleport:
+    description: "Override for minecraft:teleport"
+  tp:
+    description: "Override for minecraft:tp"
+
+permissions:
+  teleportalias.*:
+    children:
+      - teleportalias.addalias
+      - teleportalias.editalias
+      - teleportalias.removealias
+  teleportalias.addalias:
+    description: Allow user to add a new alias
+    default: op
+  teleportalias.editalias:
+    description: Allow user to edit existing aliases
+    default: op
+  teleportalias.removealias:
+    description: Allow user to remove an alias
+    default: op
