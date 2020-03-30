@@ -9,13 +9,7 @@ import org.bukkit.command.CommandSender
 
 class TeleportCommandExecutor : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
-        val newCommand = constructCommand(sender, args) ?: return false
-
-        val player = Bukkit.getPlayer(sender.name)
-        if (player != null)
-            playerLastPositions[sender.name] = player.location
-
-        Bukkit.getServer().dispatchCommand(sender, newCommand)
+        Bukkit.getServer().dispatchCommand(sender, constructCommand(sender, args) ?: return false)
         return true
     }
 

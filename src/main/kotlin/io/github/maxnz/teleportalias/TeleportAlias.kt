@@ -7,6 +7,7 @@ import io.github.maxnz.teleportalias.listalias.ListAliasCommandExecutor
 import io.github.maxnz.teleportalias.removealias.RemoveAliasCommandExecutor
 import io.github.maxnz.teleportalias.removealias.RemoveAliasTabCompleter
 import io.github.maxnz.teleportalias.teleport.TeleportCommandExecutor
+import io.github.maxnz.teleportalias.teleport.TeleportListener
 import io.github.maxnz.teleportalias.teleport.TeleportTabCompleter
 import org.bukkit.configuration.serialization.ConfigurationSerialization
 import org.bukkit.plugin.java.JavaPlugin
@@ -22,6 +23,7 @@ class TeleportAlias : JavaPlugin() {
     }
 
     override fun onEnable() {
+        server.pluginManager.registerEvents(TeleportListener(), this)
         this.getCommand("addalias")?.setExecutor(AddAliasCommandExecutor())
         this.getCommand("editalias")?.apply {
             setExecutor(EditAliasCommandExecutor())
