@@ -8,6 +8,7 @@ import io.github.maxnz.teleportalias.removealias.RemoveAliasCommandExecutor
 import io.github.maxnz.teleportalias.removealias.RemoveAliasTabCompleter
 import io.github.maxnz.teleportalias.teleport.TeleportCommandExecutor
 import io.github.maxnz.teleportalias.teleport.TeleportListener
+import io.github.maxnz.teleportalias.teleport.TeleportLocation
 import io.github.maxnz.teleportalias.teleport.TeleportTabCompleter
 import org.bukkit.configuration.serialization.ConfigurationSerialization
 import org.bukkit.plugin.java.JavaPlugin
@@ -16,9 +17,14 @@ class TeleportAlias : JavaPlugin() {
 
     init {
         ConfigurationSerialization.registerClass(Alias::class.java)
+        ConfigurationSerialization.registerClass(TeleportLocation::class.java)
         this.saveDefaultConfig()
         this.config.getList("aliases")?.forEach {
             aliases += it as Alias
+        }
+        this.config.getList("playerLastPositions")?.forEach {
+            val location = it as TeleportLocation
+            playerLastPositions += location.player to location
         }
     }
 
@@ -47,6 +53,7 @@ class TeleportAlias : JavaPlugin() {
 
     override fun onDisable() {
         this.config.set("aliases", aliases)
+        this.config.set("playerLastPositions", playerLastPositions.values.toMutableList())
         this.saveConfig()
         super.onDisable()
     }

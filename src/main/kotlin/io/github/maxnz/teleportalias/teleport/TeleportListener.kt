@@ -11,7 +11,7 @@ class TeleportListener: Listener {
     @EventHandler(priority = EventPriority.HIGH)
     fun checkTeleportType(event: PlayerTeleportEvent) {
         if (event.cause == PlayerTeleportEvent.TeleportCause.COMMAND) {
-            playerLastPositions[event.player.name] = event.player.location
+            playerLastPositions[event.player.name] = TeleportLocation(event.player.name, event.player.location)
         }
     }
 
