@@ -11,6 +11,14 @@ To use an alias, type `$name` instead of coordinates.
 ![Example1-1](https://github.com/maxnz/TeleportAlias/blob/master/images/TeleportEx1-1.png)
 ![Example1-2](https://github.com/maxnz/TeleportAlias/blob/master/images/TeleportEx1-2.png)
 
+### `/tp -`
+Anyone who has used a terminal like bash long enough may have heard of the `cd -` command, which brings you back to the directory you just ran `cd` from.
+`tp -` works the same way, taking you back to the last place you teleported from.
+(Note that it won't remember your previous location if the server restarts.)
+
+![Example2-1](https://github.com/maxnz/TeleportAlias/blob/master/images/TeleportEx2-1.png)
+![Example2-2](https://github.com/maxnz/TeleportAlias/blob/master/images/TeleportEx2-2.png)
+
 ## Modifying Aliases
 ### Commands
 - `/addalias alias x y z` - Add a new alias
