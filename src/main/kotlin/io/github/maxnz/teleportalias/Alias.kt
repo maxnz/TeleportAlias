@@ -56,4 +56,3 @@ data class Alias(
     }
 }
 
-fun calculateAliasName(name: String) = if (name.startsWith('$')) name else "$$name"
