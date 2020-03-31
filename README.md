@@ -13,8 +13,9 @@ To use an alias, type `$name` instead of coordinates.
 
 ### `/tp -`
 Anyone who has used a terminal like bash long enough may have heard of the `cd -` command, which brings you back to the directory you just ran `cd` from.
-`tp -` works the same way, taking you back to the last place you teleported from.
-Only saves teleport data when you are teleported by a command - teleportation caused by ender pearls, nether portals, etc. won't affect the location that `/tp -` will take you back to.
+`/tp -` works the same way, taking you back to the last place you teleported from.
+`/tp -` only saves teleport data when you are teleported by a command.
+Teleportation caused by ender pearls, nether portals, etc. won't affect the location that `/tp -` will take you back to.
 
 ![Example2-1](https://github.com/maxnz/TeleportAlias/blob/master/images/TeleportEx2-1.png)
 ![Example2-2](https://github.com/maxnz/TeleportAlias/blob/master/images/TeleportEx2-2.png)
